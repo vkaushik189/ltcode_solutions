@@ -1,0 +1,23 @@
+class Solution(object):
+    def majorityElement(self, nums):
+        """
+        :type nums: List[int]
+        :rtype: int
+        """
+        """
+        #dictionary based approach
+        dic = {}
+        for i in nums:
+            if i in dic:
+                dic[i] += 1;
+            else:
+                dic[i] = 1;
+        
+        for k,v in dic.items():
+            if dic[k] > len(nums)/2:
+                return k
+        """
+        #creative approach
+        for i in set(nums):
+            if(nums.count(i)>len(nums)/2):
+                return i
